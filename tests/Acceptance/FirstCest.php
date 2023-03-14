@@ -15,8 +15,15 @@ class FirstCest
     public function tryToTest(AcceptanceTester $I)
     {
         $I->amOnPage('/');
-        $I->see('уйня');
+        $I->see('уйня', "h1");
+
         $I->seeLink('Join', '/site/join');
         $I->seeLink("Login", '/site/login');
+
+        $I->amOnPage('/site/join');
+        $I->see('Join', "h1");
+
+        $I->amOnPage('/site/login');
+        $I->see('Log in', "h1");
     }
 }
